@@ -17,32 +17,32 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        Log.d("Activity","onstart");
+        Log.d("onStartActivity","onstart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
 
-        Log.d("Activity","onresume");
+        Log.d("onResumeActivity","onresume");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("Activity","onpause");
+        Log.d("onPauseActivity","onpause");
     }
 
     @Override
     protected void onStop() {
-        Log.d("Activity","onstop");
+        Log.d("onStopActivity","onstop");
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
-        Log.d("Activity","ondestroy");
+        Log.d("onDestoryActivity","ondestroy");
         super.onDestroy();
     }
 }
