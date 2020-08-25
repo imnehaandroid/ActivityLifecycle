@@ -2,8 +2,12 @@ package com.example.activitylifecycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,38 +15,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("Neha","Neha");
+
+        Toast.makeText(this,"oncreate",Toast.LENGTH_SHORT).show();
+
+        TextView firstTextView = findViewById(R.id.first_activity);
+        firstTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToSecondActivity = new Intent(MainActivity.this,SecondActivity.class);
+                startActivity(goToSecondActivity);
+            }
+        });
 
     }
 
     @Override
     protected void onStart() {
-        Log.d("onStartActivity","onstart");
         super.onStart();
+        Toast.makeText(this, "onstart", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     protected void onResume() {
-
-        Log.d("onResumeActivity","onresume");
         super.onResume();
+        Toast.makeText(this, "onresume", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("onPauseActivity","onpause");
+        Toast.makeText(this, "onpause", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     protected void onStop() {
-        Log.d("onStopActivity","onstop");
         super.onStop();
+        Toast.makeText(this, "onstop", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     protected void onDestroy() {
-        Log.d("onDestoryActivity","ondestroy");
         super.onDestroy();
+        Toast.makeText(this, "ondestory", Toast.LENGTH_SHORT).show();
+
     }
 }
